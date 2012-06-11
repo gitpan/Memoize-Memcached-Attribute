@@ -9,9 +9,14 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "auto-memoize function results using memcached",
+  "ABSTRACT" => "auto-memoize function results using memcached and subroutine attributes",
   "AUTHOR" => "Greg Hill <jimbobhickville\@gmail.com>",
-  "BUILD_REQUIRES" => {},
+  "BUILD_REQUIRES" => {
+    "Test::Class" => 0,
+    "Test::Deep" => 0,
+    "Test::More" => 0,
+    "base" => 0
+  },
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
   },
@@ -19,8 +24,14 @@ my %WriteMakefileArgs = (
   "EXE_FILES" => [],
   "LICENSE" => "perl",
   "NAME" => "Memoize::Memcached::Attribute",
-  "PREREQ_PM" => {},
-  "VERSION" => "0.10",
+  "PREREQ_PM" => {
+    "Digest::MD5" => 0,
+    "Storable" => 0,
+    "Sub::Attribute" => 0,
+    "strict" => 0,
+    "warnings" => 0
+  },
+  "VERSION" => "0.11",
   "test" => {
     "TESTS" => "t/*.t"
   }
